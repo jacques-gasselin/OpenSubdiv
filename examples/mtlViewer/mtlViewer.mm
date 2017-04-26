@@ -35,6 +35,9 @@
 #import <vector>
 #import <memory>
 
+#if __has_include(<OpenSubdiv/OpenSubdiv.h>)
+#import <OpenSubdiv/OpenSubdiv.h>
+#else
 #import <far/error.h>
 #import <osd/mesh.h>
 #import <osd/cpuVertexBuffer.h>
@@ -46,6 +49,7 @@
 #import <osd/mtlPatchTable.h>
 #import <osd/mtlComputeEvaluator.h>
 #import <osd/mtlPatchShaderSource.h>
+#endif
 
 #import "../common/simple_math.h"
 #import "../../regression/common/far_utils.h"
@@ -482,6 +486,8 @@ using PerFrameBuffer = MTLRingBuffer<DataType, FRAME_LAG>;
                     case Far::PatchDescriptor::GREGORY_BASIS:
                         primPerPatch = 56;
                         break;
+                    default:
+                        break;
                 }
                 
                 [renderCommandEncoder drawPrimitives:MTLPrimitiveTypeLine vertexStart:0 vertexCount:patch.GetNumPatches() * primPerPatch];
@@ -805,6 +811,8 @@ using PerFrameBuffer = MTLRingBuffer<DataType, FRAME_LAG>;
                 _perPatchDataOffsets[3] = totalPatchDataSize;
                 //Improved basis doesn't have per-patch-per-vertex data.
                 break;
+                default:
+                    break;
             }
             
             totalPatches += patch.GetNumPatches();
@@ -866,6 +874,8 @@ using PerFrameBuffer = MTLRingBuffer<DataType, FRAME_LAG>;
                 allowsSingleCrease = false;
                 usefulControlPoints = 4;
             break;
+            default:
+                break;
         }
         
 #if TARGET_OS_EMBEDDED
@@ -1047,6 +1057,8 @@ using PerFrameBuffer = MTLRingBuffer<DataType, FRAME_LAG>;
                         pipelineDesc.vertexDescriptor = nil;
                     case Far::PatchDescriptor::TRIANGLES:
                         [vertexDesc reset];
+                        break;
+                    default:
                         break;
                 }
                 

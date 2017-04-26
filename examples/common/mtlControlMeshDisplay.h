@@ -26,7 +26,11 @@
 #define OPENSUBDIV_EXAMPLES_MTL_CONTROL_MESH_DISPLAY_H
 
 #include <Metal/Metal.h>
+#if __has_include(<OpenSubdiv/OpenSubdiv.h>)
+#import <OpenSubdiv/OpenSubdiv.h>
+#else
 #include <far/topologyLevel.h>
+#endif
 
 class MTLControlMeshDisplay {
 public:

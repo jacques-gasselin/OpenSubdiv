@@ -25,9 +25,13 @@
 #ifndef FAR_UTILS_H
 #define FAR_UTILS_H
 
+#if __has_include(<OpenSubdiv/OpenSubdiv.h>)
+#import <OpenSubdiv/OpenSubdiv.h>
+#else
 #include <far/topologyRefinerFactory.h>
 #include <far/primvarRefiner.h>
 #include <far/types.h>
+#endif
 
 #include <cstdio>
 

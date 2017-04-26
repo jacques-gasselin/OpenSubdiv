@@ -37,7 +37,7 @@
 @end
 
 @interface ViewController : NSViewController<MTKViewDelegate, OSDRendererDelegate>
-@property (weak) IBOutlet OSDView *view;
+@property (strong) IBOutlet OSDView *view;
 @property (nonatomic) OSDRenderer* osdRenderer;
 
 

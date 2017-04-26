@@ -24,7 +24,7 @@
 
 
 #import "ViewController.h"
-#import <far/patchDescriptor.h>
+#import <OpenSubdiv/OpenSubdiv.h>
 
 using namespace OpenSubdiv::OPENSUBDIV_VERSION;
 
@@ -118,6 +118,8 @@ enum {
     
     int _showPatchCounts;
 }
+
+@dynamic view;
 
 -(void)viewDidLoad {
     
