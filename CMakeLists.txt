@@ -74,6 +74,10 @@ if (NOT DEFINED CMAKE_LIBDIR_BASE)
     set( CMAKE_LIBDIR_BASE lib )
 endif()
 
+if (NOT DEFINED CMAKE_FRAMEWORKDIR_BASE)
+    set( CMAKE_FRAMEWORKDIR_BASE Frameworks )
+endif()
+
 if (NOT DEFINED CMAKE_PLUGINDIR_BASE)
     set( CMAKE_PLUGINDIR_BASE plugin )
 endif()
@@ -139,6 +143,11 @@ endif()
 # add the automatically determined parts of the RPATH
 # which point to directories outside the build tree to the install RPATH
 SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+
+# ensure that ARC is shown as enabled in the Xcode UI
+if(CMAKE_GENERATOR STREQUAL "Xcode")
+    set (CMAKE_XCODE_ATTRIBUTE_CLANG_ENABLE_OBJC_ARC "YES")
+endif()
 
 
 set(OSD_COMPILER_FLAGS)
@@ -293,9 +302,12 @@ option(NO_CUDA "Disable CUDA backend" OFF)
 option(NO_OPENCL "Disable OpenCL backend" OFF)
 option(NO_CLEW "Disable CLEW wrapper library" OFF)
 option(NO_OPENGL "Disable OpenGL support")
+option(NO_METAL "Disable Metal support" OFF)
 option(NO_DX "Disable DirectX support")
 option(NO_TESTS "Disable all tests")
 option(NO_GLTESTS "Disable GL tests")
+option(NO_GLFW "Disable components depending on GLFW" OFF)
+option(NO_GLFW_X11 "Disable GLFW components depending on X11" OFF)
 
 option(OPENSUBDIV_GREGORY_EVAL_TRUE_DERIVATIVES "Enable true derivative evaluation for Gregory basis patches" OFF)
 
@@ -325,12 +337,15 @@ endif()
 if(NOT NO_CUDA)
     find_package(CUDA 4.0)
 endif()
-if(NOT NO_OPENGL AND NOT ANDROID AND NOT IOS)
+if(NOT NO_GLFW AND NOT NO_OPENGL AND NOT ANDROID AND NOT IOS)
     find_package(GLFW 3.0.0)
 endif()
 if(NOT NO_PTEX)
    find_package(PTex 2.0)
    find_package(ZLIB 1.2)
+endif()
+if(APPLE AND NOT NO_METAL)
+    find_package(Metal)
 endif()
 if (OPENGL_FOUND AND NOT IOS)
     add_definitions(
@@ -388,6 +403,10 @@ else()
             "directives, please refer to the FindTBB.cmake shared module "
             "in your cmake installation.")
     endif()
+endif()
+
+if( METAL_FOUND AND NOT NO_METAL)
+    set(OSD_GPU TRUE)
 endif()
 
 if( OPENGL_FOUND AND NOT NO_OPENGL)
@@ -657,6 +676,11 @@ macro(_add_executable target folder)
     if(CMAKE_COMPILER_IS_ICC)
         target_link_libraries(${target} ${ICC_LIBRARIES})
     endif()
+
+    if(APPLE)
+        set_property (TARGET ${target} APPEND_STRING PROPERTY
+              COMPILE_FLAGS " -fobjc-arc ")
+    endif()
 endmacro()
 
 
@@ -674,6 +698,11 @@ macro(_add_possibly_cuda_executable target folder)
     if(CMAKE_COMPILER_IS_ICC)
         target_link_libraries(${target} ${ICC_LIBRARIES})
     endif()
+
+    if(APPLE)
+        set_property (TARGET ${target} APPEND_STRING PROPERTY
+              COMPILE_FLAGS " -fobjc-arc ")
+    endif()
 endmacro()
 
 
@@ -686,6 +715,11 @@ macro(_add_possibly_cuda_library target folder)
         add_library(${target} ${ARGN})
     endif()
     set_target_properties(${target} PROPERTIES FOLDER ${folder})
+
+    if(APPLE)
+        set_property (TARGET ${target} APPEND_STRING PROPERTY
+              COMPILE_FLAGS " -fobjc-arc ")
+    endif()
 endmacro()
 
 
@@ -716,6 +750,11 @@ macro(_add_glfw_executable target folder)
 #        endforeach()
 #    endif()
 
+    if(APPLE)
+        set_property (TARGET ${target} APPEND_STRING PROPERTY
+              COMPILE_FLAGS " -fobjc-arc ")
+    endif()
+
 endmacro()
 
 #-------------------------------------------------------------------------------
@@ -738,7 +777,7 @@ endif()
 
 add_subdirectory(opensubdiv)
 
-if (NOT ANDROID AND NOT IOS) # XXXdyu
+if (NOT ANDROID) # XXXdyu
     add_subdirectory(regression)
 endif()
 

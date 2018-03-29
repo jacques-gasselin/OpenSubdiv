@@ -60,7 +60,7 @@ EndCapGregoryBasisPatchFactory::EndCapGregoryBasisPatchFactory(
 
     int numPatchPointsExpected = numMaxLevelFaces * 20;
     // limits to 100M (=800M bytes) entries for the reserved size.
-    int numStencilsExpected = std::min(numPatchPointsExpected * 16,
+    int numStencilsExpected = (int) std::min<long>((long)numPatchPointsExpected * 16,
                                        100*1024*1024);
     _vertexStencils->reserve(numPatchPointsExpected, numStencilsExpected);
     if (_varyingStencils) {
@@ -144,8 +144,8 @@ EndCapGregoryBasisPatchFactory::GetPatchPoints(
         //  Simple struct with encoding of <level,face> index as an unsigned int and a
         //  comparison method for use with std::bsearch
         struct LevelAndFaceIndex {
-            static inline unsigned int create(unsigned int levelIndex, Index faceIndex) {
-                return (levelIndex << 28) | (unsigned int) faceIndex;
+            static inline unsigned int create(unsigned int levelIndexArg, Index faceIndexArg) {
+                return (levelIndexArg << 28) | (unsigned int) faceIndexArg;
             }
             static int compare(void const * a, void const * b) {
                 return *(unsigned int const*)a - *(unsigned int const*)b;

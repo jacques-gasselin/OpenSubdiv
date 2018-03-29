@@ -67,7 +67,7 @@ EndCapBSplineBasisPatchFactory::EndCapBSplineBasisPatchFactory(
     // we typically use 7 patch points for each bspline endcap.
     int numPatchPointsExpected = numMaxLevelFaces * 7;
     // limits to 100M (=800M bytes) entries for the reserved size.
-    int numStencilsExpected = std::min(numPatchPointsExpected * 16,
+    int numStencilsExpected = (int) std::min<long>((long)numPatchPointsExpected * 16,
                                        100*1024*1024);
     _vertexStencils->reserve(numPatchPointsExpected, numStencilsExpected);
     if (_varyingStencils) {
@@ -360,14 +360,14 @@ EndCapBSplineBasisPatchFactory::getPatchPoints(
             int intFaceInVFaces  = (thisFaceInVFaces + 2) & 0x3;
             Index intFace    = vFaces[intFaceInVFaces];
             int   vInIntFace = vInFaces[intFaceInVFaces];
-            ConstIndexArray facePoints = level->getFaceVertices(intFace);
+            ConstIndexArray intFacePoints = level->getFaceVertices(intFace);
 
             patchPoints[pointIndex++] =
-                facePoints[(vInIntFace + 1)&3] + levelVertOffset;
+                intFacePoints[(vInIntFace + 1)&3] + levelVertOffset;
             patchPoints[pointIndex++] =
-                facePoints[(vInIntFace + 2)&3] + levelVertOffset;
+                intFacePoints[(vInIntFace + 2)&3] + levelVertOffset;
             patchPoints[pointIndex++] =
-                facePoints[(vInIntFace + 3)&3] + levelVertOffset;
+                intFacePoints[(vInIntFace + 3)&3] + levelVertOffset;
         } else {
             // irregular corner
             int thisFaceInVFaces = vFaces.FindIndex(thisFace);
@@ -377,9 +377,9 @@ EndCapBSplineBasisPatchFactory::getPatchPoints(
                 int intFaceInVFaces  = (thisFaceInVFaces + 1) % valence;
                 Index intFace    = vFaces[intFaceInVFaces];
                 int   vInIntFace = vInFaces[intFaceInVFaces];
-                ConstIndexArray facePoints = level->getFaceVertices(intFace);
+                ConstIndexArray intFacePoints = level->getFaceVertices(intFace);
                 patchPoints[pointIndex++] =
-                    facePoints[(vInIntFace+3)&3] + levelVertOffset;
+                    intFacePoints[(vInIntFace+3)&3] + levelVertOffset;
             }
             {
                 // middle: (n-vertices) needs a limit stencil. skip for now
@@ -390,9 +390,9 @@ EndCapBSplineBasisPatchFactory::getPatchPoints(
                 int intFaceInVFaces  = (thisFaceInVFaces + (valence-1)) %valence;
                 Index intFace    = vFaces[intFaceInVFaces];
                 int   vInIntFace = vInFaces[intFaceInVFaces];
-                ConstIndexArray facePoints = level->getFaceVertices(intFace);
+                ConstIndexArray intFacePoints = level->getFaceVertices(intFace);
                 patchPoints[pointIndex++] =
-                    facePoints[(vInIntFace+1)&3] + levelVertOffset;
+                    intFacePoints[(vInIntFace+1)&3] + levelVertOffset;
 
             }
         }

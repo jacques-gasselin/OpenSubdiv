@@ -24,6 +24,16 @@
 
 #import <Foundation/Foundation.h>
 
+#import <OpenSubdiv/error.h>
+#import <OpenSubdiv/topologyDescriptor.h>
+#import <OpenSubdiv/topologyRefinerFactory.h>
+#import <OpenSubdiv/topologyRefiner.h>
 #import <OpenSubdiv/primvarRefiner.h>
 #import <OpenSubdiv/mesh.h>
 #import <OpenSubdiv/glmesh.h>
+#import <OpenSubdiv/mtlComputeEvaluator.h>
+#import <OpenSubdiv/mtlLegacyGregoryPatchTable.h>
+#import <OpenSubdiv/mtlPatchShaderSource.h>
+#import <OpenSubdiv/mtlVertexBuffer.h>
+#import <OpenSubdiv/mtlMesh.h>
+#import <OpenSubdiv/cpuEvaluator.h>
