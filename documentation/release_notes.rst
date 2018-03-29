@@ -22,7 +22,7 @@
      language governing permissions and limitations under the Apache License.
 
 
-3.0 - 3.2 Release Notes
+3.0 - 3.3 Release Notes
 -----------------------
 
 .. contents::
@@ -30,6 +30,36 @@
    :backlinks: none
 
 ----
+
+Release 3.3.1
+=============
+
+Release 3.3.1 is a minor bug-fix release
+
+**Bug Fixes**
+    - Fixed GLSL/HLSL/Metal patch shader code to resolve degenerate normals (GitHub Issue #947)
+    - Fixed problems with face-varying patches in uniform PatchTables
+    - Fixed integer overflow bugs for large meshes in PatchTable factories
+    - Fixed computation of PatchParam for triangle refinement (GitHub Issue #962)
+
+**Changes**
+    - Added build options: NO_GLFW and NO_GLFW_X11
+    - Added additional shapes with infinitely sharp creases to the Metal and DX11 example viewers
+    - Disabled GL tests during CI runs on Linux
+    - Improved stability of examples/glImaging in CI runs by testing GL version
+
+Release 3.3.0
+=============
+
+Release 3.3.0 is significant release adding an Osd implementation for Apple's Metal API
+
+**New Features**
+    - Added an Osd implementation for Apple's Metal API
+    - Added the mtlViewer example
+
+**Changes**
+    - Fixed several instances of local variable shadowing that could cause build warnings
+    - Updated continuous-integration build scripts and added testing on macOS
 
 Release 3.2.0
 =============
