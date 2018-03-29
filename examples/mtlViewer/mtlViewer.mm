@@ -312,7 +312,7 @@ using PerFrameBuffer = MTLRingBuffer<DataType, FRAME_LAG>;
     [renderCommandEncoder setVertexBuffer:pib offset:0 atIndex:INDICES_BUFFER_INDEX];
     [renderCommandEncoder setVertexBuffer:_frameConstantsBuffer offset:0 atIndex:FRAME_CONST_BUFFER_INDEX];
 #if FVAR_SINGLE_BUFFER
-    int faceVaryingDataBufferOffset = _doAdaptive ? 0 : _shape->uvs.size() * sizeof(float);
+    size_t faceVaryingDataBufferOffset = _doAdaptive ? 0 : _shape->uvs.size() * sizeof(float);
     [renderCommandEncoder setVertexBuffer:_faceVaryingDataBuffer offset:faceVaryingDataBufferOffset atIndex:OSD_FVAR_DATA_BUFFER_INDEX];
 #else
     [renderCommandEncoder setVertexBuffer:_faceVaryingDataBuffer offset:0 atIndex:OSD_FVAR_DATA_BUFFER_INDEX];
@@ -769,7 +769,7 @@ using PerFrameBuffer = MTLRingBuffer<DataType, FRAME_LAG>;
         Osd::MTLStencilTable mtlStencilTable = Osd::MTLStencilTable(stencilTable, &_context);
 
         uint32_t fvarWidth             = _numFaceVaryingElements;
-        uint32_t coarseFVarValuesCount = _shape->uvs.size() / fvarWidth;
+        uint32_t coarseFVarValuesCount = uint32_t(_shape->uvs.size() / fvarWidth);
         uint32_t finalFVarValuesCount  = stencilTable->GetNumStencils();
 
 #if FVAR_SINGLE_BUFFER
