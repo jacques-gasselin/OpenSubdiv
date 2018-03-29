@@ -1007,7 +1007,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"generating shader header files\"\ns=${BUILT_PRODUCTS_DIR}/stringify\nsrc=${SRCROOT}/opensubdiv/osd\ndst=${DERIVED_FILE_DIR}\n\n$s ${src}/glslPatchCommon.glsl       ${dst}/glslPatchCommon.gen.h\n$s ${src}/patchBasisCommon.h         ${dst}/patchBasisCommon.gen.h\n$s ${src}/glslPatchBSpline.glsl      ${dst}/glslPatchBSpline.gen.h\n$s ${src}/glslPatchGregory.glsl      ${dst}/glslPatchGregory.gen.h\n$s ${src}/glslPatchGregoryBasis.glsl ${dst}/glslPatchGregoryBasis.gen.h\n$s ${src}/glslComputeKernel.glsl     ${dst}/glslComputeKernel.gen.h\n$s ${src}/clKernel.cl                ${dst}/clKernel.gen.h\n$s ${src}/mtlComputeKernel.metal     ${dst}/mtlComputeKernel.gen.h\n$s ${src}/mtlPatchBSpline.metal      ${dst}/mtlPatchBSpline.gen.h\n$s ${src}/mtlPatchCommon.metal       ${dst}/mtlPatchCommon.gen.h\n$s ${src}/mtlPatchGregory.metal      ${dst}/mtlPatchGregory.gen.h\n$s ${src}/mtlPatchGregoryBasis.metal ${dst}/mtlPatchGregoryBasis.gen.h\n";
+			shellScript = "echo \"generating shader header files\"\ns=${BUILT_PRODUCTS_DIR}/stringify\nsrc=${SRCROOT}/opensubdiv/osd\ndst=${DERIVED_FILE_DIR}\n\nmkdir -p ${dst}\n\n$s ${src}/glslPatchCommon.glsl       ${dst}/glslPatchCommon.gen.h\n$s ${src}/patchBasisCommon.h         ${dst}/patchBasisCommon.gen.h\n$s ${src}/glslPatchBSpline.glsl      ${dst}/glslPatchBSpline.gen.h\n$s ${src}/glslPatchGregory.glsl      ${dst}/glslPatchGregory.gen.h\n$s ${src}/glslPatchGregoryBasis.glsl ${dst}/glslPatchGregoryBasis.gen.h\n$s ${src}/glslComputeKernel.glsl     ${dst}/glslComputeKernel.gen.h\n$s ${src}/clKernel.cl                ${dst}/clKernel.gen.h\n$s ${src}/mtlComputeKernel.metal     ${dst}/mtlComputeKernel.gen.h\n$s ${src}/mtlPatchBSpline.metal      ${dst}/mtlPatchBSpline.gen.h\n$s ${src}/mtlPatchCommon.metal       ${dst}/mtlPatchCommon.gen.h\n$s ${src}/mtlPatchGregory.metal      ${dst}/mtlPatchGregory.gen.h\n$s ${src}/mtlPatchGregoryBasis.metal ${dst}/mtlPatchGregoryBasis.gen.h\n";
 			showEnvVarsInLog = 0;
 		};
 		C45450BE1EB02A080024D219 /* ShellScript */ = {
@@ -1021,7 +1021,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"generating shader header files\"\ns=${BUILT_PRODUCTS_DIR}/stringify\nsrc=${SRCROOT}/examples/mtlViewer\ndst=${DERIVED_FILE_DIR}\n\necho $s\necho $src\necho $dst\n\n$s ${src}/mtlViewer.metal ${dst}/mtlViewer.gen.h\n";
+			shellScript = "echo \"generating shader header files\"\ns=${BUILT_PRODUCTS_DIR}/stringify\nsrc=${SRCROOT}/examples/mtlViewer\ndst=${DERIVED_FILE_DIR}\n\necho $s\necho $src\necho $dst\n\nmkdir -p ${dst}\n$s ${src}/mtlViewer.metal ${dst}/mtlViewer.gen.h\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
