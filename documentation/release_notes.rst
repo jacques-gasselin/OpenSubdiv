@@ -31,6 +31,29 @@
 
 ----
 
+Release 3.3.3
+=============
+
+Release 3.3.3 is bug-fix release addressing regressions from release 3.3.2
+
+**Bug Fixes**
+    - Fixed a regression in PatchTable construction with varying patches (GitHub Issue #976)
+    - Fixed a regression in PatchTable construction for face-varying patches (GitHub Issue #972)
+    - Fixed a bug in the initialization of Far::SourcePatch (GitHub Issue #971)
+
+Release 3.3.2
+=============
+
+Release 3.3.2 is a minor release with potentially significant performance
+improvements to the patch pre-processing stages
+
+**Changes**
+    - Improved performance of PatchTable construction (GitHub Issue #966)
+    - The resulting improved accuracy will produce slight numerical differences in computations involving patches, e.g. StencilTable and PatchTable evaluation
+
+**Bug Fixes**
+    - Far::PatchTableFactory now supports PatchTable construction with ENDCAP_BILINEAR_BASIS specified
+
 Release 3.3.1
 =============
 
@@ -38,8 +61,8 @@ Release 3.3.1 is a minor bug-fix release
 
 **Bug Fixes**
     - Fixed GLSL/HLSL/Metal patch shader code to resolve degenerate normals (GitHub Issue #947)
-    - Fixed problems with face-varying patches in uniform PatchTables
-    - Fixed integer overflow bugs for large meshes in PatchTable factories
+    - Fixed problems with face-varying patches in uniform PatchTables (GitHub Issue #946)
+    - Fixed integer overflow bugs for large meshes in PatchTable factories (GitHub Issue #957)
     - Fixed computation of PatchParam for triangle refinement (GitHub Issue #962)
 
 **Changes**
