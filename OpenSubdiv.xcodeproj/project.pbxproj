@@ -9,16 +9,8 @@
 /* Begin PBXBuildFile section */
 		6B4BECB91E99421A00F09F83 /* OpenSubdiv.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B4BECB71E99421A00F09F83 /* OpenSubdiv.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6B8C69CB1E9C2D420001FB80 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B8C69CA1E9C2D420001FB80 /* Metal.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		6BCBAAD21E994414009A1B02 /* endCapBSplineBasisPatchFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCBAA1B1E994413009A1B02 /* endCapBSplineBasisPatchFactory.cpp */; };
-		6BCBAAD31E994414009A1B02 /* endCapBSplineBasisPatchFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BCBAA1C1E994413009A1B02 /* endCapBSplineBasisPatchFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6BCBAAD41E994414009A1B02 /* endCapGregoryBasisPatchFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCBAA1D1E994413009A1B02 /* endCapGregoryBasisPatchFactory.cpp */; };
-		6BCBAAD51E994414009A1B02 /* endCapGregoryBasisPatchFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BCBAA1E1E994413009A1B02 /* endCapGregoryBasisPatchFactory.h */; };
-		6BCBAAD61E994414009A1B02 /* endCapLegacyGregoryPatchFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCBAA1F1E994413009A1B02 /* endCapLegacyGregoryPatchFactory.cpp */; };
-		6BCBAAD71E994414009A1B02 /* endCapLegacyGregoryPatchFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BCBAA201E994413009A1B02 /* endCapLegacyGregoryPatchFactory.h */; };
 		6BCBAAD81E994414009A1B02 /* error.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCBAA211E994413009A1B02 /* error.cpp */; };
 		6BCBAAD91E994414009A1B02 /* error.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BCBAA221E994413009A1B02 /* error.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6BCBAADA1E994414009A1B02 /* gregoryBasis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCBAA231E994413009A1B02 /* gregoryBasis.cpp */; };
-		6BCBAADB1E994414009A1B02 /* gregoryBasis.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BCBAA241E994413009A1B02 /* gregoryBasis.h */; };
 		6BCBAADC1E994414009A1B02 /* patchBasis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCBAA251E994413009A1B02 /* patchBasis.cpp */; };
 		6BCBAADD1E994414009A1B02 /* patchBasis.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BCBAA261E994413009A1B02 /* patchBasis.h */; };
 		6BCBAADE1E994414009A1B02 /* patchDescriptor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCBAA271E994413009A1B02 /* patchDescriptor.cpp */; };
@@ -130,6 +122,17 @@
 		6BCBAB8D1E994750009A1B02 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCBAAB91E994414009A1B02 /* main.cpp */; };
 		6BCBAB9A1E9952B7009A1B02 /* OpenCL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCBAB991E9952B7009A1B02 /* OpenCL.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6BCBAB9C1E9952C0009A1B02 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCBAB9B1E9952C0009A1B02 /* OpenGL.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		6BE6882B213B104E007D1097 /* patchBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BE68822213B104E007D1097 /* patchBuilder.h */; };
+		6BE6882C213B104E007D1097 /* bilinearPatchBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BE68823213B104E007D1097 /* bilinearPatchBuilder.cpp */; };
+		6BE6882D213B104E007D1097 /* sparseMatrix.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BE68824213B104E007D1097 /* sparseMatrix.h */; };
+		6BE6882E213B104E007D1097 /* loopPatchBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BE68825213B104E007D1097 /* loopPatchBuilder.cpp */; };
+		6BE6882F213B104E007D1097 /* bilinearPatchBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BE68826213B104E007D1097 /* bilinearPatchBuilder.h */; };
+		6BE68830213B104E007D1097 /* patchBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BE68827213B104E007D1097 /* patchBuilder.cpp */; };
+		6BE68831213B104E007D1097 /* catmarkPatchBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BE68828213B104E007D1097 /* catmarkPatchBuilder.cpp */; };
+		6BE68832213B104E007D1097 /* catmarkPatchBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BE68829213B104E007D1097 /* catmarkPatchBuilder.h */; };
+		6BE68833213B104E007D1097 /* loopPatchBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BE6882A213B104E007D1097 /* loopPatchBuilder.h */; };
+		6BE68836213B106B007D1097 /* hbr_utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BE68834213B106B007D1097 /* hbr_utils.h */; };
+		6BE68837213B106B007D1097 /* cmp_utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BE68835213B106B007D1097 /* cmp_utils.h */; };
 		C45347B71EB0E67F00F69D63 /* far_utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C45347B31EB0E67B00F69D63 /* far_utils.cpp */; };
 		C45450661EAF8F8A0024D219 /* mtlCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = C45450541EAF8F8A0024D219 /* mtlCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C45450671EAF8F8A0024D219 /* mtlComputeEvaluator.h in Headers */ = {isa = PBXBuildFile; fileRef = C45450551EAF8F8A0024D219 /* mtlComputeEvaluator.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -200,16 +203,8 @@
 		6B4BECB71E99421A00F09F83 /* OpenSubdiv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenSubdiv.h; sourceTree = "<group>"; };
 		6B4BECB81E99421A00F09F83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B8C69CA1E9C2D420001FB80 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
-		6BCBAA1B1E994413009A1B02 /* endCapBSplineBasisPatchFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = endCapBSplineBasisPatchFactory.cpp; sourceTree = "<group>"; };
-		6BCBAA1C1E994413009A1B02 /* endCapBSplineBasisPatchFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = endCapBSplineBasisPatchFactory.h; sourceTree = "<group>"; };
-		6BCBAA1D1E994413009A1B02 /* endCapGregoryBasisPatchFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = endCapGregoryBasisPatchFactory.cpp; sourceTree = "<group>"; };
-		6BCBAA1E1E994413009A1B02 /* endCapGregoryBasisPatchFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = endCapGregoryBasisPatchFactory.h; sourceTree = "<group>"; };
-		6BCBAA1F1E994413009A1B02 /* endCapLegacyGregoryPatchFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = endCapLegacyGregoryPatchFactory.cpp; sourceTree = "<group>"; };
-		6BCBAA201E994413009A1B02 /* endCapLegacyGregoryPatchFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = endCapLegacyGregoryPatchFactory.h; sourceTree = "<group>"; };
 		6BCBAA211E994413009A1B02 /* error.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = error.cpp; sourceTree = "<group>"; };
 		6BCBAA221E994413009A1B02 /* error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = error.h; sourceTree = "<group>"; };
-		6BCBAA231E994413009A1B02 /* gregoryBasis.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gregoryBasis.cpp; sourceTree = "<group>"; };
-		6BCBAA241E994413009A1B02 /* gregoryBasis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gregoryBasis.h; sourceTree = "<group>"; };
 		6BCBAA251E994413009A1B02 /* patchBasis.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = patchBasis.cpp; sourceTree = "<group>"; };
 		6BCBAA261E994413009A1B02 /* patchBasis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = patchBasis.h; sourceTree = "<group>"; };
 		6BCBAA271E994413009A1B02 /* patchDescriptor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = patchDescriptor.cpp; sourceTree = "<group>"; };
@@ -329,6 +324,17 @@
 		6BCBAB861E99471D009A1B02 /* stringify */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stringify; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BCBAB991E9952B7009A1B02 /* OpenCL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCL.framework; path = System/Library/Frameworks/OpenCL.framework; sourceTree = SDKROOT; };
 		6BCBAB9B1E9952C0009A1B02 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		6BE68822213B104E007D1097 /* patchBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = patchBuilder.h; sourceTree = "<group>"; };
+		6BE68823213B104E007D1097 /* bilinearPatchBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bilinearPatchBuilder.cpp; sourceTree = "<group>"; };
+		6BE68824213B104E007D1097 /* sparseMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sparseMatrix.h; sourceTree = "<group>"; };
+		6BE68825213B104E007D1097 /* loopPatchBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = loopPatchBuilder.cpp; sourceTree = "<group>"; };
+		6BE68826213B104E007D1097 /* bilinearPatchBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bilinearPatchBuilder.h; sourceTree = "<group>"; };
+		6BE68827213B104E007D1097 /* patchBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = patchBuilder.cpp; sourceTree = "<group>"; };
+		6BE68828213B104E007D1097 /* catmarkPatchBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = catmarkPatchBuilder.cpp; sourceTree = "<group>"; };
+		6BE68829213B104E007D1097 /* catmarkPatchBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = catmarkPatchBuilder.h; sourceTree = "<group>"; };
+		6BE6882A213B104E007D1097 /* loopPatchBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loopPatchBuilder.h; sourceTree = "<group>"; };
+		6BE68834213B106B007D1097 /* hbr_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hbr_utils.h; sourceTree = "<group>"; };
+		6BE68835213B106B007D1097 /* cmp_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmp_utils.h; sourceTree = "<group>"; };
 		C45347AE1EB0E55100F69D63 /* shape_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shape_utils.h; sourceTree = "<group>"; };
 		C45347B31EB0E67B00F69D63 /* far_utils.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = far_utils.cpp; sourceTree = "<group>"; };
 		C45347B41EB0E67B00F69D63 /* far_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = far_utils.h; sourceTree = "<group>"; };
@@ -464,16 +470,17 @@
 		6BCBAA191E994413009A1B02 /* far */ = {
 			isa = PBXGroup;
 			children = (
-				6BCBAA1B1E994413009A1B02 /* endCapBSplineBasisPatchFactory.cpp */,
-				6BCBAA1C1E994413009A1B02 /* endCapBSplineBasisPatchFactory.h */,
-				6BCBAA1D1E994413009A1B02 /* endCapGregoryBasisPatchFactory.cpp */,
-				6BCBAA1E1E994413009A1B02 /* endCapGregoryBasisPatchFactory.h */,
-				6BCBAA1F1E994413009A1B02 /* endCapLegacyGregoryPatchFactory.cpp */,
-				6BCBAA201E994413009A1B02 /* endCapLegacyGregoryPatchFactory.h */,
+				6BE68823213B104E007D1097 /* bilinearPatchBuilder.cpp */,
+				6BE68826213B104E007D1097 /* bilinearPatchBuilder.h */,
+				6BE68828213B104E007D1097 /* catmarkPatchBuilder.cpp */,
+				6BE68829213B104E007D1097 /* catmarkPatchBuilder.h */,
+				6BE68825213B104E007D1097 /* loopPatchBuilder.cpp */,
+				6BE6882A213B104E007D1097 /* loopPatchBuilder.h */,
+				6BE68827213B104E007D1097 /* patchBuilder.cpp */,
+				6BE68822213B104E007D1097 /* patchBuilder.h */,
+				6BE68824213B104E007D1097 /* sparseMatrix.h */,
 				6BCBAA211E994413009A1B02 /* error.cpp */,
 				6BCBAA221E994413009A1B02 /* error.h */,
-				6BCBAA231E994413009A1B02 /* gregoryBasis.cpp */,
-				6BCBAA241E994413009A1B02 /* gregoryBasis.h */,
 				6BCBAA251E994413009A1B02 /* patchBasis.cpp */,
 				6BCBAA261E994413009A1B02 /* patchBasis.h */,
 				6BCBAA271E994413009A1B02 /* patchDescriptor.cpp */,
@@ -632,6 +639,8 @@
 		C45347B11EB0E58600F69D63 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				6BE68835213B106B007D1097 /* cmp_utils.h */,
+				6BE68834213B106B007D1097 /* hbr_utils.h */,
 				C45347B31EB0E67B00F69D63 /* far_utils.cpp */,
 				C45347B41EB0E67B00F69D63 /* far_utils.h */,
 				C45347AE1EB0E55100F69D63 /* shape_utils.h */,
@@ -784,6 +793,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BCBAB681E994414009A1B02 /* types.h in Headers */,
+				6BE6882F213B104E007D1097 /* bilinearPatchBuilder.h in Headers */,
 				6BCBAB051E994414009A1B02 /* loop.h in Headers */,
 				6BCBAB801E994414009A1B02 /* types.h in Headers */,
 				6BCBAB1F1E994414009A1B02 /* cpuKernel.h in Headers */,
@@ -792,13 +802,12 @@
 				6BCBAAEB1E994414009A1B02 /* stencilBuilder.h in Headers */,
 				6BCBAAFF1E994414009A1B02 /* faceEdit.h in Headers */,
 				6BCBAB071E994414009A1B02 /* subdivision.h in Headers */,
-				6BCBAAD31E994414009A1B02 /* endCapBSplineBasisPatchFactory.h in Headers */,
 				6BCBAB661E994414009A1B02 /* options.h in Headers */,
 				6BCBAAE61E994414009A1B02 /* patchTableFactory.h in Headers */,
 				6BCBAB091E994414009A1B02 /* vertexEdit.h in Headers */,
+				6BE68833213B104E007D1097 /* loopPatchBuilder.h in Headers */,
 				C45450671EAF8F8A0024D219 /* mtlComputeEvaluator.h in Headers */,
 				6BCBAB161E994414009A1B02 /* clVertexBuffer.h in Headers */,
-				6BCBAADB1E994414009A1B02 /* gregoryBasis.h in Headers */,
 				6BCBAAE71E994414009A1B02 /* primvarRefiner.h in Headers */,
 				6B4BECB91E99421A00F09F83 /* OpenSubdiv.h in Headers */,
 				6BCBAAE11E994414009A1B02 /* patchMap.h in Headers */,
@@ -820,20 +829,23 @@
 				6BCBAB671E994414009A1B02 /* scheme.h in Headers */,
 				6BCBAB011E994414009A1B02 /* fvarEdit.h in Headers */,
 				6BCBAAF11E994414009A1B02 /* topologyDescriptor.h in Headers */,
+				6BE68836213B106B007D1097 /* hbr_utils.h in Headers */,
 				6BCBAB451E994414009A1B02 /* glslPatchShaderSource.h in Headers */,
 				6BCBAAF21E994414009A1B02 /* topologyLevel.h in Headers */,
 				6BCBAB781E994414009A1B02 /* quadRefinement.h in Headers */,
-				6BCBAAD71E994414009A1B02 /* endCapLegacyGregoryPatchFactory.h in Headers */,
 				6BCBAAF41E994414009A1B02 /* topologyRefiner.h in Headers */,
 				6BCBAB021E994414009A1B02 /* halfedge.h in Headers */,
 				6BCBAB1D1E994414009A1B02 /* cpuGLVertexBuffer.h in Headers */,
 				6BCBAB001E994414009A1B02 /* fvarData.h in Headers */,
 				6BCBAB7F1E994414009A1B02 /* triRefinement.h in Headers */,
+				6BE6882D213B104E007D1097 /* sparseMatrix.h in Headers */,
 				6BCBAAE21E994414009A1B02 /* patchParam.h in Headers */,
 				6BCBAB721E994414009A1B02 /* fvarLevel.h in Headers */,
+				6BE6882B213B104E007D1097 /* patchBuilder.h in Headers */,
 				6BCBAB3B1E994414009A1B02 /* glLegacyGregoryPatchTable.h in Headers */,
 				6BCBAB701E994414009A1B02 /* componentInterfaces.h in Headers */,
 				6BCBAAE91E994414009A1B02 /* ptexIndices.h in Headers */,
+				6BE68832213B104E007D1097 /* catmarkPatchBuilder.h in Headers */,
 				6BCBAAF81E994414009A1B02 /* allocator.h in Headers */,
 				6BCBAB041E994414009A1B02 /* holeEdit.h in Headers */,
 				6BCBAB591E994414009A1B02 /* opengl.h in Headers */,
@@ -848,7 +860,6 @@
 				6BCBAB741E994414009A1B02 /* fvarRefinement.h in Headers */,
 				6BCBAB141E994414009A1B02 /* clPatchTable.h in Headers */,
 				6BCBAB761E994414009A1B02 /* level.h in Headers */,
-				6BCBAAD51E994414009A1B02 /* endCapGregoryBasisPatchFactory.h in Headers */,
 				6BCBAB0B1E994414009A1B02 /* bufferDescriptor.h in Headers */,
 				6BCBAB601E994414009A1B02 /* bilinearScheme.h in Headers */,
 				C45450761EAF8F8A0024D219 /* mtlVertexBuffer.h in Headers */,
@@ -864,6 +875,7 @@
 				6BCBAB061E994414009A1B02 /* mesh.h in Headers */,
 				6BCBAAF91E994414009A1B02 /* bilinear.h in Headers */,
 				6BCBAB481E994414009A1B02 /* glVertexBuffer.h in Headers */,
+				6BE68837213B106B007D1097 /* cmp_utils.h in Headers */,
 				6BCBAB3C1E994414009A1B02 /* glMesh.h in Headers */,
 				6BCBAAD91E994414009A1B02 /* error.h in Headers */,
 				6BCBAB5A1E994414009A1B02 /* patchBasisCommon.h in Headers */,
@@ -939,7 +951,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0940;
 				TargetAttributes = {
 					6B4BECB31E99421A00F09F83 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1032,6 +1044,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BCBAB3D1E994414009A1B02 /* glPatchTable.cpp in Sources */,
+				6BE6882C213B104E007D1097 /* bilinearPatchBuilder.cpp in Sources */,
 				6BCBAAEC1E994414009A1B02 /* stencilTable.cpp in Sources */,
 				6BCBAAEA1E994414009A1B02 /* stencilBuilder.cpp in Sources */,
 				6BCBAAE51E994414009A1B02 /* patchTableFactory.cpp in Sources */,
@@ -1046,22 +1059,22 @@
 				C454506B1EAF8F8A0024D219 /* mtlLegacyGregoryPatchTable.mm in Sources */,
 				6BCBAB631E994414009A1B02 /* crease.cpp in Sources */,
 				6BCBAAEE1E994414009A1B02 /* stencilTableFactory.cpp in Sources */,
+				6BE68831213B104E007D1097 /* catmarkPatchBuilder.cpp in Sources */,
 				6BCBAB201E994414009A1B02 /* cpuPatchTable.cpp in Sources */,
 				6BCBAB131E994414009A1B02 /* clPatchTable.cpp in Sources */,
-				6BCBAADA1E994414009A1B02 /* gregoryBasis.cpp in Sources */,
 				6BCBAAD81E994414009A1B02 /* error.cpp in Sources */,
 				6BCBAB441E994414009A1B02 /* glslPatchShaderSource.cpp in Sources */,
 				6BCBAB7E1E994414009A1B02 /* triRefinement.cpp in Sources */,
 				6BCBAB771E994414009A1B02 /* quadRefinement.cpp in Sources */,
 				6BCBAB791E994414009A1B02 /* refinement.cpp in Sources */,
 				C45450751EAF8F8A0024D219 /* mtlPatchTable.mm in Sources */,
+				6BE68830213B104E007D1097 /* patchBuilder.cpp in Sources */,
 				6BCBAAE01E994414009A1B02 /* patchMap.cpp in Sources */,
 				6BCBAB6C1E994414009A1B02 /* version.cpp in Sources */,
-				6BCBAAD21E994414009A1B02 /* endCapBSplineBasisPatchFactory.cpp in Sources */,
+				6BE6882E213B104E007D1097 /* loopPatchBuilder.cpp in Sources */,
 				C45450681EAF8F8A0024D219 /* mtlComputeEvaluator.mm in Sources */,
 				6BCBAB1E1E994414009A1B02 /* cpuKernel.cpp in Sources */,
 				6BCBAB0E1E994414009A1B02 /* clEvaluator.cpp in Sources */,
-				6BCBAAD41E994414009A1B02 /* endCapGregoryBasisPatchFactory.cpp in Sources */,
 				6BCBAAF31E994414009A1B02 /* topologyRefiner.cpp in Sources */,
 				6BCBAB151E994414009A1B02 /* clVertexBuffer.cpp in Sources */,
 				6BCBAB1C1E994414009A1B02 /* cpuGLVertexBuffer.cpp in Sources */,
@@ -1069,7 +1082,6 @@
 				6BCBAB711E994414009A1B02 /* fvarLevel.cpp in Sources */,
 				6BCBAB221E994414009A1B02 /* cpuVertexBuffer.cpp in Sources */,
 				6BCBAB471E994414009A1B02 /* glVertexBuffer.cpp in Sources */,
-				6BCBAAD61E994414009A1B02 /* endCapLegacyGregoryPatchFactory.cpp in Sources */,
 				6BCBAAF01E994414009A1B02 /* topologyDescriptor.cpp in Sources */,
 				6BCBAB1A1E994414009A1B02 /* cpuEvaluator.cpp in Sources */,
 				C454506D1EAF8F8A0024D219 /* mtlMesh.mm in Sources */,
@@ -1130,12 +1142,21 @@
 		6B4BECAD1E9941B600F09F83 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1155,12 +1176,21 @@
 		6B4BECAE1E9941B600F09F83 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
